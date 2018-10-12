@@ -24,10 +24,18 @@
 }
 
 .mq-max(@max, @ruleset) {
-  @media (max-width: (@max - .05)) {
-    @ruleset();
+  & when (ispixel(@max)) {
+    @media (max-width: (@max - 1)) {
+      @ruleset();
+    }
+  }
+  & when not(ispixel(@max)) {
+    @media (max-width: (@max - .05)) {
+      @ruleset();
+    }
   }
 }
+
 
 // Height
 // ------------------------------------
@@ -38,8 +46,15 @@
 }
 
 .mq-max-height(@max, @ruleset) {
-  @media (max-height: (@max - .05)) {
-    @ruleset();
+  & when (ispixel(@max)) {
+    @media (max-height: (@max - 1)) {
+      @ruleset();
+    }
+  }
+  & when (not(ispixel(@max)) {
+    @media (max-height: (@max - .05)) {
+      @ruleset();
+    }
   }
 }
 
