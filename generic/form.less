@@ -98,7 +98,7 @@
     &.is-recommended {
       .inputValidation(@inputColor, @inputHintColor, @backgroundImage:true, @cursor:false, @focus:true);
       .penBg(@color:@inputHintColor)
-
+    }
 
     &.is-readonly,
     &:read-only,
@@ -240,16 +240,15 @@
       border: @defaultBorderWidth dashed darken(@inputColor, 20%);
       background-color: darken(@inputColor, 5%);
     }
-      .input-group.is-invalid &,
-      &.is-invalid,
-      &[aria-invalid="true"] {
-        .inputValidation(@inputColor, @inputDangerColor, @focus:true);
-      }
-      .input-group.is-valid &,
-      &.is-valid,
-      &[aria-invalid="false"] {
-        .inputValidation(@inputColor, @inputValidColor, @focus:true);
-      }
+    .input-group.is-invalid &,
+    &.is-invalid,
+    &[aria-invalid="true"] {
+      .inputValidation(@inputColor, @inputDangerColor, @focus:true);
+    }
+    .input-group.is-valid &,
+    &.is-valid,
+    &[aria-invalid="false"] {
+      .inputValidation(@inputColor, @inputValidColor, @focus:true);
     }
     &--small {
       font-size: .8em;
